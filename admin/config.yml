@@ -1,0 +1,23 @@
+backend:
+  name: github
+  repo: ivarpetersons123/trilobit-final
+  branch: main
+
+media_folder: "assets/images"
+public_folder: "/assets/images"
+
+collections:
+  - name: "motocikli"
+    label: "Motocikli"
+    folder: "data"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Nosaukums", name: "title", widget: "string"}
+      - {label: "Gads", name: "year", widget: "string"}
+      - {label: "Nobraukums", name: "mileage", widget: "string"}
+      - {label: "Motora tilpums", name: "engine", widget: "string"}
+      - {label: "Jauda", name: "power", widget: "string"}
+      - {label: "Cena", name: "price", widget: "string"}
+      - {label: "Apraksts", name: "description", widget: "text"}
+      - {label: "Bilde", name: "image", widget: "image"}
