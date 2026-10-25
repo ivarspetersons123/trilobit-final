@@ -1,0 +1,40 @@
+backend:
+  name: github
+  repo: ivarpetersons123/trilobit-final
+  branch: main
+
+locale: lv
+media_folder: assets/images
+public_folder: assets/images
+
+collections:
+  - name: saturs
+    label: Vietnes saturs
+    files:
+      - name: motocikli
+        label: Motociklu saraksts
+        file: data/bikes.json
+        format: json
+        fields:
+          - name: bikes
+            label: Motocikli
+            widget: list
+            summary: '{{fields.name}} — {{fields.price}}'
+            fields:
+              - {name: id, label: 'Identifikators (nemainīt esošajiem)', widget: string, hint: 'Piemēram, pan-america. Jāsaglabā unikāls.'}
+              - {name: name, label: Nosaukums, widget: string}
+              - {name: category, label: Kategorija, widget: string, required: false}
+              - {name: year, label: Gads, widget: string, required: false}
+              - {name: mileage, label: Nobraukums, widget: string, required: false}
+              - {name: engine_cc, label: 'Motora tilpums', widget: string, required: false}
+              - {name: power, label: Jauda, widget: string, required: false}
+              - {name: price, label: Cena, widget: string, required: false, hint: 'Piemēram, 9500 € vai Cena pēc pieprasījuma'}
+              - {name: description, label: Apraksts, widget: text, required: false}
+              - {name: image, label: Galvenā bilde, widget: image, required: false}
+              - name: gallery
+                label: Bilžu galerija
+                widget: list
+                required: false
+                field: {name: image, label: Bilde, widget: image}
+              - {name: hidden, label: Paslēpt sludinājumu, widget: boolean, default: false, required: false}
+              - {name: sold, label: Pārdots, widget: boolean, default: false, required: false}
